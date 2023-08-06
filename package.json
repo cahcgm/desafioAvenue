@@ -1,0 +1,17 @@
+{
+  "name": "projeto_avenue",
+  "version": "1.0.0",
+  "description": "Projeto teste Avenue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "author": "Carolina Martins",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "cypress": "^12.17.3",
+    "cypress-plugin-api": "^2.11.1"
+  }
+}
