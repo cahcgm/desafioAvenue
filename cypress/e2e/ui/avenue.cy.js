@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Fluxo de compra na Amazon', () => {
+describe('Navegação', () => {
   beforeEach(() => {
     cy.visit_site("avenue")
   })
