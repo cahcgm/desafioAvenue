@@ -7,7 +7,7 @@ describe('Consultar clima na API do OpenWeather', () => {
     ]
 
     locations.forEach(element => {
-        it(`Consultar clima da cidade ${element.city}`, () => {
+        it(`Consultar clima da cidade ${element.city}`, { tags : '@api' }, () => {
             cy.api_consultarClima(`${element.city}`,`${element.state}`,`${element.country}`,Cypress.config('api_key'))
             .then(response => {
                 expect(response.status).to.equal(200)

@@ -1,7 +1,11 @@
 const { defineConfig } = require('cypress')
+const { initPlugin } = require ('@frsource/cypress-plugin-visual-regression-diff/plugins')
 
 module.exports = defineConfig({
   e2e: {
+    setupNodeEvents(on, config) {
+      initPlugin(on, config);
+    },
     baseUrlui_amazon: 'https://www.amazon.com.br/',
     baseUrlui_avenue: 'https://avenue.us/',
     baseUrlapi: 'https://api.openweathermap.org/',

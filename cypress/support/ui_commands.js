@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-let total = 0.0
+let total = 0
 
 Cypress.Commands.add('visit_site', (text) => {
     cy.visit(Cypress.config(`baseUrlui_${text}`))
@@ -11,10 +11,6 @@ Cypress.Commands.add('busca_produto', (product) => {
     cy.get('#nav-search-submit-button').click()
     cy.get('span[data-component-type="s-search-results"]').should('be.visible')
 })
-
-Cypress.Commands.add('elementExists', (selector) => {
-    return cy.window().then($window => $window.document.querySelector(selector));
-  });
 
 Cypress.Commands.add('adiciona_produto_carrinho', () => {
     cy.get('div[data-component-type="s-search-result"]').first().click()
@@ -51,4 +47,8 @@ Cypress.Commands.add('preencher_cadastro', () => {
     cy.get('#ap_email').type(faker.internet.email())
     cy.get('#ap_password').type(password)
     cy.get('#ap_password_check').type(password)
+})
+
+Cypress.Commands.add('acessar_tela_banking', () => {
+    cy.get('#header_banking').click({force:true})
 })

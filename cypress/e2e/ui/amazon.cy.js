@@ -5,7 +5,7 @@ describe('Fluxo de compra na Amazon', () => {
     cy.visit_site("amazon")
   })
 
-  it('Adicionar produtos no carrinho de compras', () => {
+  it('Adicionar produtos no carrinho de compras', { tags : ['@ui','@amazon'] }, () => {
     cy.busca_produto('Echo dot')
     cy.adiciona_produto_carrinho()
 
@@ -15,7 +15,7 @@ describe('Fluxo de compra na Amazon', () => {
     cy.valida_valor_carrinho()
   })
 
-  it('Criar nova conta', () => {
+  it('Criar nova conta', { tags : ['@ui','@amazon'] }, () => {
     cy.acessar_cadastro()
     cy.preencher_cadastro()
   })
