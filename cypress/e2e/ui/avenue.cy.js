@@ -20,6 +20,6 @@ describe('Navegação área aberta portal Avenue', () => {
   })
 
   it('Validar regressão visual na tela Banking', { tags : ['@ui','@avenue'] }, () => {
-    // cy.get('.banking--section-two-image').first().matchImage()
+    cy.get('.banking--hero-title').first().matchImage()
   })
 })
